@@ -6,7 +6,7 @@ import statistics
 from tabulate import tabulate
 from tqdm import tqdm
 
-MAX_RUNS = 10
+MAX_RUNS = 100
 print(f"Benchmark running over {MAX_RUNS} runs...")
 
 def run_script(filepath:str):
@@ -39,5 +39,6 @@ for dirpath, dirs, files in tree_iter:
             ])
             
 TABLEFMT = "heavy_grid"
+TABLEFMT = "github"
 headers = ["File", "Min (s)", "Avg (s)", "Max (s)"]
 print(tabulate(sorted(results), headers=headers, tablefmt=TABLEFMT))
